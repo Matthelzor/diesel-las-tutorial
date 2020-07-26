@@ -33,7 +33,7 @@
     "versionFirst": "5.0.17",
     "siteFonts": [],
     "imageResize": true,
-    "publishChangesOnly": false,
+    "publishChangesOnly": true,
     "favicon": "@PROJECT_PATH@/assets/images/hashli-128x206.png",
     "robotsSwitcher": false,
     "sitemapSwitcher": false,
