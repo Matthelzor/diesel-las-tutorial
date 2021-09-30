@@ -6,7 +6,7 @@
       "name": "mobirise5",
       "title": "Mobirise 5",
       "styling": {
-        "primaryColor": "#6592e6",
+        "primaryColor": "#000000",
         "secondaryColor": "#ff6666",
         "successColor": "#40b0bf",
         "infoColor": "#47b5ed",
@@ -23,15 +23,23 @@
         "display7Size": 1.2,
         "display4Font": "Jost",
         "display4Size": 1.1,
-        "isRoundedButtons": true,
-        "isAnimatedOnScroll": true,
-        "isScrollToTopButton": true
+        "isRoundedButtons": false,
+        "isGhostButtonBorder": false,
+        "underlinedLinks": false,
+        "isAnimatedOnScroll": false,
+        "isScrollToTopButton": false
       },
       "additionalSetColors": []
     },
     "path": "@PROJECT_PATH@",
     "versionFirst": "5.0.17",
-    "siteFonts": [],
+    "siteFonts": [
+      {
+        "css": "'Jost', sans-serif",
+        "name": "Jost",
+        "url": "https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i"
+      }
+    ],
     "imageResize": true,
     "publishChangesOnly": true,
     "favicon": "@PROJECT_PATH@/assets/images/hashli-128x206.png",
@@ -41,8 +49,11 @@
     "siteUrl": false,
     "cookiesAlert": false,
     "gdpr": false,
-    "uniqCompNum": 6,
-    "versionPublish": "5.0.17"
+    "uniqCompNum": 13,
+    "versionPublish": "5.3.0",
+    "mbrsiteDomain": "rcieuhtpzn",
+    "witsec-white-label": true,
+    "screenshot": "screenshot.png"
   },
   "pages": {
     "index.html": {
@@ -56,90 +67,19 @@
       },
       "components": [
         {
-          "alias": false,
-          "_styles": {
-            "& when not (@fullScreen)": {
-              "padding-top": "(@paddingTop * 1rem)",
-              "padding-bottom": "(@paddingBottom * 1rem)"
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
-            },
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value"
-            },
-            ".mbr-text, .mbr-section-btn": {
-              "color": "#ffffff",
-              "text-align": "center"
-            },
-            ".mbr-section-title": {
-              "color": "#fafafa",
-              "text-align": "center"
-            }
-          },
-          "_name": "header3",
-          "_customHTML": "<section class=\"header3\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n\n        <input type=\"range\" inline name=\"textWidth\" title=\"Width\" min=\"4\" max=\"12\" value=\"12\" step=\"1\">\n        <select title=\"Align\" name=\"contentAlign\">\n            <option value>Left</option>\n            <option value=\"justify-content-center\" selected>Center</option>\n            <option value=\"justify-content-end\">Right</option>\n        </select>\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubitle\">\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/intro-2000x1271.jpeg\" selected parallax>\n            <input type=\"color\" title=\"Color\" value=\"#4479d9\">\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.4\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"align-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row {{contentAlign}}\">\n            <div class=\"col-12 col-lg-{{textWidth}}\">\n                <h1 class=\"mbr-section-title mbr-fonts-style mb-3\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\"><b><i>Coming soon in August.</i></b></h1>\n                <h2 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-2\" mbr-if=\"showSubitle\"><b>\n                        Header Subtitle\n                    </b></h2>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"><b><br></b><b>Starting next month, i will show you how i keep on making these Character Ports for PAYDAY 2 by using Legendary Armour Skins as a base for them so you can learn it <i>my</i> way or at least take a look how these are made. </b><br><br><b>For now only the introduction to Chapter one is available.</b><b><br></b><b><br></b><br></p>\n                <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-3\" mbr-if=\"showButtons\"><a class=\"btn btn-black\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Create\n                        Your Website!</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "s5RyIgxdbv",
+          "alias": "casper-blocks/components",
+          "_isSecondary": true,
+          "typeCompatible": "type",
+          "_styles": {},
+          "_name": "casperHeader19",
+          "_sourceTheme": "mobirise5",
+          "_customHTML": "<section class=\"casperHeader19\" group=\"Casper Blocks\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n  'mbr-fullscreen': fullScreen,\n  'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n     \n<audio controls=\"\" loop=\"\" autoplay=\"autoplay\" hidden=\"hidden\"> <source src=\"pain.mp3\" type=\"audio/ogg\" \"=\"\"> </audio>        \n        \n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"video\" title=\"Video\" value=\"https://youtu.be/ucIuM-R6igw\" selected>\n        <audio id=\"youtube\" controls></audio>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#4479d9\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12\">\n                <h1 class=\"mbr-section-title mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\"></h1>\n                <!--                 <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-1\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Create your own website.&nbsp;<br><a href=\"#\" class=\"text-danger\"><b>How to start a website &gt;&gt;</b></a></p> -->\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "sKxrjIK7vU",
+          "_anchor": "casperHeader19-c",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {},
-          "_anchor": "header3-0"
-        },
-        {
-          "alias": false,
-          "_styles": {
-            "& when not (@fullScreen)": {
-              "padding-top": "(@paddingTop * 1rem)",
-              "padding-bottom": "(@paddingBottom * 1rem)"
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
-            },
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value"
-            },
-            ".mbr-text, .mbr-section-btn": {
-              "color": "#ffffff"
-            },
-            ".mbr-section-title": {
-              "color": "#ffffff"
-            }
-          },
-          "_name": "header3",
-          "_customHTML": "<section class=\"header3\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n\n        <input type=\"range\" inline name=\"textWidth\" title=\"Width\" min=\"4\" max=\"12\" value=\"10\" step=\"1\">\n        <select title=\"Align\" name=\"contentAlign\">\n            <option value>Left</option>\n            <option value=\"justify-content-center\" selected>Center</option>\n            <option value=\"justify-content-end\">Right</option>\n        </select>\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubitle\">\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\" checked>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/intro2-1648x1168.jpeg\" parallax selected>\n            <input type=\"color\" title=\"Color\" value=\"#4479d9\">\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.9\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"align-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row {{contentAlign}}\">\n            <div class=\"col-12 col-lg-{{textWidth}}\">\n                <h1 class=\"mbr-section-title mbr-fonts-style mb-3\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\"><b>Chapter One: The Beginning</b></h1>\n                <h2 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-2\" mbr-if=\"showSubitle\"><b>\n                        Header Subtitle\n                    </b></h2>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">This section will cover the tools that i use and requirements that are necessary in order to port in custom characters to the Diesel Engine.&nbsp;<br></p>\n                <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn mt-3\" mbr-if=\"showButtons\"><a class=\"btn btn-primary\" href=\"https://store.steampowered.com/app/218620/PAYDAY_2/\" data-app-placeholder=\"Type Text\" target=\"_blank\">PAYDAY 2</a> <a class=\"btn btn-info\" href=\"https://modworkshop.net/mod/27741\" data-app-placeholder=\"Type Text\" target=\"_blank\">Diesel Bundle Viewer<br></a> <a class=\"btn btn-info\" href=\"https://superblt.znix.xyz/modeltool/v2.5.5/Release-v2.5.5.7z\" data-app-placeholder=\"Type Text\" target=\"_blank\">Diesel Model Tool<br></a> <a class=\"btn btn-info\" href=\"https://cdn.discordapp.com/attachments/441319027843792906/736986357569945631/matt.mscript\" data-app-placeholder=\"Type Text\" target=\"_blank\">My .mscript for Model Tool</a> <a class=\"btn btn-danger\" href=\"https://www.blender.org/download/releases/2-79/\" data-app-placeholder=\"Type Text\" target=\"_blank\">Blender 2.79<br></a></div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "s5RGup2Tn6",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {},
-          "_anchor": "header3-3"
-        },
-        {
-          "alias": false,
-          "_styles": {
-            "& when not (@fullScreen)": {
-              "padding-top": "(@paddingTop * 1rem)",
-              "padding-bottom": "(@paddingBottom * 1rem)"
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
-            },
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value"
-            },
-            ".mbr-section-title": {
-              "color": "#ffffff"
-            }
-          },
-          "_name": "info1",
-          "_customHTML": "<section group=\"Info\" class=\"info1\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"3\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"1\" condition=\"fullScreen == false\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background3.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#4479d9\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"align-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-lg-8\">\n                <h3 class=\"mbr-section-title mb-4 mbr-fonts-style\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\"><b>More to be added soon.</b></h3>\n                <p class=\"mbr-text mb-5 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n                    Mobirise is a free offline app for Windows and Mac to easily create small/medium websites, landing pages, online resumes and portfolios. 3100+ beautiful website blocks, templates and themes help you to start easily.\n                </p>\n                <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-white\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Visit Forums</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "s5RLjoB0RN",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {},
-          "_anchor": "info1-5"
+          "_params": {}
         }
       ]
     }
